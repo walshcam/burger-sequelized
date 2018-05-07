@@ -1,0 +1,40 @@
+<div class = "container">
+
+    <div class = "card m-2 bg-secondary">
+        <h1 class = "text-center text-white">Burger Menu</h1>
+    </div>
+
+    <div class = "card m-2 bg-secondary">
+    <h2 class = "card-title m-1 text-white">Burgers Currently Available</h2>
+        <ul class = "list-group text-secondary">
+            {{#each burgers}}
+                {{#unless devoured}}
+                    {{> burger-block devoured=false}}
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class = "card m-2 bg-secondary">
+    <h2 class = "card-title m-1 text-white">Add A Burger</h2>
+        <form class = "create-burger-form m-2 text-secondary list-group-item">
+                <h3>New Burger:</h3>
+                <input class = "form-control" type = "text" id = "newBurger" name = "burger_name" placeholder = "New Burger Here!">
+                <button type = "submit" class="btn btn-secondary mt-2">Add</button>
+        </form>
+    </div>
+
+    <div class = "card m-2 bg-secondary">
+    <h2 class = "card-title m-1 text-white">Burgers No Longer Available</h2>
+        <ul class = "list-group text-secondary">
+            {{#each burgers}}
+                {{#if devoured}}
+                    <li class = "list-group-item m-2">
+                    {{ this.burger_name }}
+                    </li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+
+</div>
