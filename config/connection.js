@@ -2,7 +2,7 @@
 var mysql = require("mysql");
 
 // Setting up our connection information
-var source = {
+var connection = {
   localhost: {
     port: 8889,
     host: "localhost",
